@@ -104,3 +104,53 @@ article {
     font-weight: bold; 
     color: #38bdf8;
 }
+
+/* Container for the segmented control */
+.selector-cantidad {
+    display: flex;
+    position: relative;
+    background-color: #334155;
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+}
+
+/* Hide the actual radio circles */
+.selector-cantidad input {
+    display: none;
+}
+
+/* Style for the labels (the text buttons) */
+.selector-cantidad label {
+    flex: 1;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+/* Highlighting the selected text */
+.selector-cantidad input:checked + label {
+    color: #0f172a;
+}
+
+/* The sliding background pill */
+.glider {
+    position: absolute;
+    height: calc(100% - 0.5rem);
+    width: 3.5rem; /* Adjust based on label padding */
+    background-color: #38bdf8;
+    z-index: 1;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-out;
+}
+
+/* Logic to move the glider based on which radio is checked */
+#out6:checked ~ .glider { transform: translateX(0); }
+#out8:checked ~ .glider { transform: translateX(3.5rem); }
+#out9:checked ~ .glider { transform: translateX(7rem); }

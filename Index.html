@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,19 @@
         <p> Generador de Paletas de Colores</p>
     </header>
     <div class="caja-interactiva">
-        <input type="checkbox" class="tipo-color">hsl-rgba</input>
+        <input type="checkbox" class="tipo-color"></input>
+        <div class="selector-cantidad">
+            <input type="radio" name="outputs" id="out6" value="6" checked>
+            <label for="out6">6</label>
+
+            <input type="radio" name="outputs" id="out8" value="8">
+            <label for="out8">8</label>
+
+            <input type="radio" name="outputs" id="out9" value="9">
+            <label for="out9">9</label>
+            
+            <span class="glider"></span>
+        </div>
         <button class="boton-generar">Generar Paletas!</button>
     </div>
     <article>
