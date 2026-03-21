@@ -1,1 +1,3 @@
-import * as funciones from "./functions"
+
+
+document.getElementById('paleta').remove();
