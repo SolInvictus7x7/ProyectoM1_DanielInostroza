@@ -1,3 +1,6 @@
+import * as funciones from "./functions.js";
 
 
-document.getElementById('paleta').remove();
+// TODO: 
+botonGenerar = document.querySelector(".boton-generar")
+botonGenerar.addEventListener('click', funciones.generar())
