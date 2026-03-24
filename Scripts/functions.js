@@ -9,8 +9,9 @@ export function cantidadColor() {
     return cantidadSelect ? cantidadSelect.value : null;
 }
 
-export function generar(){
-    const template = document.getElementById('paleta');
+export function generar() {
+    const template = document.querySelector('.paleta-temp');
+    const target = document.querySelector('article');
     const clonar = template.content.cloneNode(true);
-    return clonar
+    target.appendChild(clonar);
 }
