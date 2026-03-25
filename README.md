@@ -1,4 +1,5 @@
 Manual de Usuario
+
     1. Selección de Formato: Utiliza el interruptor (switch) superior para alternar entre códigos de color RGBA o HSL.
 
     2. Configuración de Cantidad: Elige cuántos colores deseas en tu paleta (6, 8 o 9) usando el selector segmentado.
@@ -8,6 +9,7 @@ Manual de Usuario
     4. Copiar al Portapapeles: Haz clic directamente sobre cualquier barra de color para copiar su código. Un mensaje (toast) confirmará la acción.
 
 Manual Técnico
+
     - Manipulación del DOM: Se utiliza el elemento <template> para clonar de forma eficiente la estructura de las paletas sin saturar el HTML inicial.
 
     - Lógica de Color: Generación dinámica mediante Math.random() con redondeo de valores para garantizar códigos limpios y legibles.
@@ -15,6 +17,7 @@ Manual Técnico
     - Estilos Dinámicos: El diseño es completamente responsivo utilizando unidades relativas (rem, em, %) y CSS Grid con auto-fill para adaptarse a cualquier pantalla sin medidas fijas en píxeles.
 
 Descarga y Ejecución Local
+
     1. Clonar o Descargar: Descarga los archivos del proyecto en una carpeta local, o copia desde github usando git:
     https://github.com/SolInvictus7x7/ProyectoM1_DanielInostroza
 
