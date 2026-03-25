@@ -100,6 +100,8 @@ article {
     color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
     text-transform: uppercase;
+    cursor: pointer;
+    transition: filter 0.2s;
 }
 
 .nombre-paleta { 
@@ -159,3 +161,29 @@ article {
 #out6:checked ~ .glider { transform: translateX(0); }
 #out8:checked ~ .glider { transform: translateX(3.5rem); }
 #out9:checked ~ .glider { transform: translateX(7rem); }
+
+#toast-box {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+}
+
+.toast {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
