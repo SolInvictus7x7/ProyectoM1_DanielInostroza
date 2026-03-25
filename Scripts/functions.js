@@ -6,7 +6,6 @@ function toastPop(message) {
     
     container.appendChild(toast);
     
-    // Remove toast after 2.5 seconds
     setTimeout(() => {
         toast.style.opacity = '0';
         setTimeout(() => toast.remove(), 300);
@@ -34,7 +33,6 @@ export function generar() {
         li.style.backgroundColor = color;
         li.textContent = color;
 
-        // Move the listener INSIDE this loop
         li.addEventListener('click', () => {
             navigator.clipboard.writeText(color);
             toastPop(`Copiado: ${color}`); 
