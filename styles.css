@@ -14,7 +14,19 @@ header {
     margin-bottom: 2rem;
 }
 
-h1 { font-size: 2.5rem; letter-spacing: -0.06rem; margin: 0; }
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.06rem;
+    margin: 0;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+}
 
 .caja-interactiva {
     display: flex;
@@ -23,7 +35,6 @@ h1 { font-size: 2.5rem; letter-spacing: -0.06rem; margin: 0; }
     gap: 1.5rem;
 }
 
-/* Pill Switch Styling */
 .tipo-color {
     appearance: none;
     width: 6.25rem;
@@ -38,8 +49,10 @@ h1 { font-size: 2.5rem; letter-spacing: -0.06rem; margin: 0; }
 .tipo-color::before {
     content: 'RGBA';
     position: absolute;
-    left: 0.31rem; top: 0.31rem;
-    width: 2.8rem; height: 1.87rem;
+    left: 0.31rem;
+    top: 0.31rem;
+    width: 2.8rem;
+    height: 1.87rem;
     background: #38bdf8;
     border-radius: 0.93rem;
     display: flex;
@@ -56,66 +69,6 @@ h1 { font-size: 2.5rem; letter-spacing: -0.06rem; margin: 0; }
     background: #818cf8;
 }
 
-.boton-generar {
-    padding: 0.8rem 2rem;
-    border-radius: 0.5rem;
-    border: none;
-    background: #38bdf8;
-    color: #0f172a;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.boton-generar:hover {
-    transform: translateY(-0.125rem); background: #7dd3fc;
-}
-
-article {
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr)); 
-    gap: 2rem; 
-    padding: 2rem;
-    align-items: start;
-}
-
-.paleta {
-    background: #1e293b; 
-    border-radius: 0.75rem; 
-    overflow: hidden; 
-    border: 0.0625rem solid #475569;
-    animation: fadeInSlide 0.4s ease-out forwards;
-    transition: transform 0.3s ease-in-out;
-}
-
-.paleta ul {
-    display: flex; flex-direction: column; padding: 0; margin: 0; list-style: none;
-}
-
-.color {
-    height: 2.81rem; 
-    display: flex; 
-    align-items: center; 
-    padding-left: 1rem; 
-    border-bottom: 0.0625rem solid #475569;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: filter 0.2s;
-}
-
-.nombre-paleta { 
-    background: rgba(255, 255, 255, 0.05); 
-    padding: 0.75rem;
-    border-bottom: 0.0625rem solid #475569; 
-    font-weight: bold; 
-    color: #38bdf8;
-}
-
-/* Container for the segmented control */
 .selector-cantidad {
     display: flex;
     position: relative;
@@ -126,12 +79,10 @@ article {
     width: fit-content;
 }
 
-/* Hide the actual radio circles */
 .selector-cantidad input {
     display: none;
 }
 
-/* Style for the labels (the text buttons) */
 .selector-cantidad label {
     flex: 1;
     padding: 0.5rem 1.5rem;
@@ -144,26 +95,83 @@ article {
     text-align: center;
 }
 
-/* Highlighting the selected text */
 .selector-cantidad input:checked + label {
     color: #0f172a;
 }
 
-/* The sliding background pill */
 .glider {
     position: absolute;
     height: calc(100% - 0.5rem);
-    width: 3.5rem; /* Adjust based on label padding */
+    width: 3.5rem;
     background-color: #38bdf8;
     z-index: 1;
     border-radius: 0.5rem;
     transition: 0.3s ease-out;
 }
 
-/* Logic to move the glider based on which radio is checked */
 #out6:checked ~ .glider { transform: translateX(0); }
 #out8:checked ~ .glider { transform: translateX(3.5rem); }
 #out9:checked ~ .glider { transform: translateX(7rem); }
+
+.boton-generar {
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.boton-generar:hover {
+    transform: translateY(-0.125rem);
+    background: #7dd3fc;
+}
+
+.paleta {
+    background: #1e293b;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 0.0625rem solid #475569;
+    animation: fadeInSlide 0.4s ease-out forwards;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nombre-paleta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-bottom: 0.0625rem solid #475569;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.paleta ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.color {
+    height: 2.81rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    border-bottom: 0.0625rem solid #475569;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.color:hover {
+    filter: brightness(1.1);
+}
 
 #toast-box {
     position: fixed;
@@ -182,7 +190,7 @@ article {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.3);
     animation: slideUp 0.3s ease-out;
 }
 
