@@ -12,6 +12,22 @@ function toastPop(message) {
     }, 2500);
 }
 
+function rgbToHex(color) {
+    const temp = document.createElement("div");
+    temp.style.color = color;
+    document.body.appendChild(temp);
+    const styles = window.getComputedStyle(temp).color;
+    temp.remove();
+
+    const rgb = styles.match(/\d+/g).map(Number);
+    const hex = rgb.slice(0, 3).map(x => {
+        const h = x.toString(16);
+        return h.length === 1 ? "0" + h : h;
+    }).join("");
+
+    return `#${hex}`.toUpperCase();
+}
+
 export function generar() {
     const template = document.querySelector('.paleta-temp');
     const target = document.querySelector('article');
@@ -26,16 +42,18 @@ export function generar() {
     }
 
     clonar.querySelectorAll('.color').forEach(li => {
-        const color = tipoColor ? 
+        const colorBase = tipoColor ? 
             `hsl(${Math.floor(Math.random() * 360)}, ${Math.floor(Math.random() * 100)}%, ${Math.floor(Math.random() * 100)}%)` : 
-            `rgba(${Math.round(Math.random() * 255)}, ${Math.round(Math.round(Math.random() * 255))}, ${Math.round(Math.random() * 255)}, 1)`;
+            `rgba(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, 1)`;
         
-        li.style.backgroundColor = color;
-        li.textContent = color;
+        const hex = rgbToHex(colorBase);
+        
+        li.style.backgroundColor = colorBase;
+        li.textContent = `${colorBase} | ${hex}`;
 
         li.addEventListener('click', () => {
-            navigator.clipboard.writeText(color);
-            toastPop(`Copiado: ${color}`); 
+            navigator.clipboard.writeText(hex);
+            toastPop(`Copiado HEX: ${hex}`); 
         });
     });
 

@@ -11,40 +11,45 @@
         <h1>Colorfly Studio</h1>
         <p> Generador de Paletas de Colores</p>
     </header>
-    <div class="caja-interactiva">
-        <input type="checkbox" class="tipo-color"></input>
-        <div class="selector-cantidad">
-            <input type="radio" name="outputs" id="out6" value="6" checked>
-            <label for="out6">6</label>
 
-            <input type="radio" name="outputs" id="out8" value="8">
-            <label for="out8">8</label>
+    <main>
+        <div class="caja-interactiva">
+            <input type="checkbox" class="tipo-color">
+            <div class="selector-cantidad">
+                <input type="radio" name="outputs" id="out6" value="6" checked>
+                <label for="out6">6</label>
 
-            <input type="radio" name="outputs" id="out9" value="9">
-            <label for="out9">9</label>
-            
-            <span class="glider"></span>
+                <input type="radio" name="outputs" id="out8" value="8">
+                <label for="out8">8</label>
+
+                <input type="radio" name="outputs" id="out9" value="9">
+                <label for="out9">9</label>
+                
+                <span class="glider"></span>
+            </div>
+            <button class="boton-generar">Generar Paletas!</button>
         </div>
-        <button class="boton-generar">Generar Paletas!</button>
-    </div>
-    <article>
+
+        <article>
             <template class="paleta-temp">
                 <div class="paleta">
                     <div class="nombre-paleta"></div>
                     <ul>
-                        <li class="color" id="c1">Color 1</li>
-                        <li class="color" id="c1">Color 2</li>
-                        <li class="color" id="c1">Color 3</li>
-                        <li class="color" id="c1">Color 4</li>
-                        <li class="color" id="c1">Color 5</li>
-                        <li class="color" id="c1">Color 6</li>
+                        <li class="color">Color 1</li>
+                        <li class="color">Color 2</li>
+                        <li class="color">Color 3</li>
+                        <li class="color">Color 4</li>
+                        <li class="color">Color 5</li>
+                        <li class="color">Color 6</li>
                         <li class="color" id="c2">Color 7</li>
                         <li class="color" id="c2">Color 8</li>
                         <li class="color" id="c3">Color 9</li>
                     </ul>
                 </div>
             </template>
-    </article>
+        </article>
+    </main>
+
     <div id="toast-box"></div>
     <script type="module" src="./Scripts/main.js"></script>
 </body>
