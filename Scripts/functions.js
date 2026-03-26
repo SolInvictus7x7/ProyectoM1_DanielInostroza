@@ -28,6 +28,8 @@ function rgbToHex(color) {
     return `#${hex}`.toUpperCase();
 }
 
+
+//funcion exportar
 export function generar() {
     const template = document.querySelector('.paleta-temp');
     const target = document.querySelector('article');
